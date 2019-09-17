@@ -4,7 +4,7 @@ const serveIndex = require('serve-index');
 
 const app = express();
 const port = 3000;
-const htdocs = '.';
+const htdocs = '../front/dist/front/';
 
 app.use((req, res, next) => {
     console.log('req.url', req.url);
