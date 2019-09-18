@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Quizz } from './quizz';
+import { Question } from './question';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizzService {
-
   current = this.getCurrent();
 
   create(name: string) {
@@ -26,6 +26,11 @@ export class QuizzService {
     const quizz = JSON.parse(str);
     quizz.__proto__ = Quizz.prototype;
     return quizz;
+  }
+
+  addQuestion(question: Question) {
+    this.current.questions.push(question);
+    this.saveCurrent();
   }
 
 

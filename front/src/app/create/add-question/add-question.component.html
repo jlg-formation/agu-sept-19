@@ -1,6 +1,6 @@
 <main>
   <h1>Ajoute une question</h1>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Libellé</div>
       <textarea rows="3" formControlName="label"></textarea>
@@ -16,7 +16,7 @@
     </div>
     <div class="buttons">
       <button type="button" routerLink="/setup">Annuler</button>
-      <button type="button" routerLink="/setup" class="primary" [disabled]="f.invalid">Ajouter</button>
+      <button class="primary" [disabled]="f.invalid">Ajouter</button>
     </div>
   </form>
 </main>
