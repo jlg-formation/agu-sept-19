@@ -3,7 +3,7 @@
   <form [formGroup]="f">
     <label>
       <div>Nom du quizz</div>
-      <input type="text" formControlName="name">
+      <input appAutofocus type="text" formControlName="name">
     </label>
     <div class="buttons">
       <button type="button" routerLink="/setup" [disabled]="f.invalid" class="primary">Suivant</button>

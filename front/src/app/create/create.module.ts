@@ -8,6 +8,7 @@ import { SetupComponent } from './setup/setup.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { FinishedComponent } from './finished/finished.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WidgetModule } from '../widget/widget.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     CreateRoutingModule,
     FontAwesomeModule,
+    WidgetModule,
   ]
 })
 export class CreateModule { }

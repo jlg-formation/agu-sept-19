@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { HomeComponent } from './routes/home/home.component';
 import { CreateModule } from './create/create.module';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateModule } from './create/create.module';
     FontAwesomeModule,
     AppRoutingModule,
     LayoutModule,
-    CreateModule
+    CreateModule,
+    WidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
