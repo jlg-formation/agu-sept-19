@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { CreateRoutingModule } from './create-routing.module';
 import { CreateComponent } from './create/create.component';
+import { SetupComponent } from './setup/setup.component';
 
 
 @NgModule({
-  declarations: [CreateComponent],
+  declarations: [CreateComponent, SetupComponent],
   imports: [
     CommonModule,
     CreateRoutingModule
