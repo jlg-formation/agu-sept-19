@@ -3,20 +3,20 @@
   <form [formGroup]="f">
     <label>
       <div>Libellé</div>
-      <textarea rows="3"></textarea>
+      <textarea rows="3" formControlName="label"></textarea>
     </label>
     <div class="answers">
       <div class="answer" *ngFor="let letter of ['A', 'B', 'C', 'D']">
         <label>
           <span>{{letter}}</span>
-          <input type="text">
+          <input type="text" [formControlName]="'answer' + letter">
         </label>
-        <input type="radio">
+        <input type="radio" formControlName="correctAnswer" [value]="letter">
       </div>
     </div>
     <div class="buttons">
       <button type="button" routerLink="/setup">Annuler</button>
-      <button type="button" routerLink="/setup" class="primary">Ajouter</button>
+      <button type="button" routerLink="/setup" class="primary" [disabled]="f.invalid">Ajouter</button>
     </div>
   </form>
 </main>
