@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { CreateRoutingModule } from './create-routing.module';
 import { CreateComponent } from './create/create.component';
 import { SetupComponent } from './setup/setup.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 
 @NgModule({
-  declarations: [CreateComponent, SetupComponent],
+  declarations: [CreateComponent, SetupComponent, AddQuestionComponent],
   imports: [
     CommonModule,
     CreateRoutingModule
