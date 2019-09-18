@@ -10,6 +10,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+input {
+  border: 0.1em solid #eee;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
 button {
   background: #eee;
   border: 0.1em solid #eee;
