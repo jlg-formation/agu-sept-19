@@ -6,6 +6,13 @@ header {
   padding: 0 0.5em;
 }
 
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: inherit;
+  color: inherit;
+}
+
 img {
   width: 2em;
 }
