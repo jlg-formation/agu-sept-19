@@ -2,5 +2,5 @@
   <h1>Quizz : {{quizz.current.name}}</h1>
   <h2>Nombre de questions: {{quizz.current.questions.length}}</h2>
   <button class="primary" routerLink="/add-question">Ajouter une question</button>
-  <button routerLink="/finished">Terminer</button>
+  <button (click)="finish()">Terminer</button>
 </main>
