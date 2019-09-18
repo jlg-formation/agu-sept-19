@@ -5,3 +5,29 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+button {
+  background: #eee;
+  border: 0.1em solid #eee;
+  padding: 0.5em;
+
+  &:disabled {
+    background: hsl(0, 0%, 95%);
+    border: 0.1em solid hsl(0, 0%, 95%);
+    color: hsl(0, 0%, 65%);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+    &:hover {
+      background: #ddd;
+      border: 0.1em solid #ddd;
+    }
+    &:active {
+      background: #ccc;
+      border: 0.1em solid #ccc;
+    }
+  }
+
+
+}
