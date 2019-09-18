@@ -1,12 +1,13 @@
 <main>
   <h1>Crée ton Quizz</h1>
-  <form>
+  <form [formGroup]="f">
     <label>
       <div>Nom du quizz</div>
-      <input type="text">
+      <input type="text" formControlName="name">
     </label>
     <div class="buttons">
-      <button type="button" routerLink="/setup">Suivant</button>
+      <button type="button" routerLink="/setup" [disabled]="f.invalid" class="primary">Suivant</button>
     </div>
   </form>
 </main>
+<!-- {{f.value | json}} -->

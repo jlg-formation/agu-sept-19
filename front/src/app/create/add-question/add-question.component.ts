@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-question',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-question.component.scss']
 })
 export class AddQuestionComponent implements OnInit {
+
+  f = new FormGroup({});
 
   constructor() { }
 
