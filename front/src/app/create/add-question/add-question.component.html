@@ -5,10 +5,12 @@
       <div>Libellé</div>
       <textarea rows="3"></textarea>
     </label>
-    <div>
-      <div *ngFor="let letter of ['A', 'B', 'C', 'D']">
-        <span>{{letter}}</span>
-        <input type="text">
+    <div class="answers">
+      <div class="answer" *ngFor="let letter of ['A', 'B', 'C', 'D']">
+        <label>
+          <span>{{letter}}</span>
+          <input type="text">
+        </label>
         <input type="radio">
       </div>
     </div>

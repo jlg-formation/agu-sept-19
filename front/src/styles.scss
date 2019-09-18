@@ -14,10 +14,14 @@ h1, h2 {
   margin: 0;
 }
 
-input {
+input, textarea {
   border: 0.1em solid #eee;
   padding: 0.5em 1em;
   width: 100%;
+}
+
+input[type="radio"] {
+  width: 2em;
 }
 
 button {
@@ -46,7 +50,7 @@ button {
 
     &.primary {
       background: #333;
-      border: 0.1em solid #000;
+      border: 0.1em solid #333;
       color: white;
       &:hover {
         background: #555;
