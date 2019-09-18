@@ -23,10 +23,12 @@ button {
 
   &:not(:disabled) {
     cursor: pointer;
+
     &:hover {
       background: #ddd;
       border: 0.1em solid #ddd;
     }
+
     &:active {
       background: #ccc;
       border: 0.1em solid #ccc;
