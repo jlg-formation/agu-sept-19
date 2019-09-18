@@ -13,7 +13,7 @@ body {
 button {
   background: #eee;
   border: 0.1em solid #eee;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 
   &:disabled {
     background: hsl(0, 0%, 95%);
