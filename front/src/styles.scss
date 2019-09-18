@@ -43,7 +43,24 @@ button {
       background: #ccc;
       border: 0.1em solid #ccc;
     }
+
+    &.primary {
+      background: #333;
+      border: 0.1em solid #000;
+      color: white;
+      &:hover {
+        background: #555;
+        border: 0.1em solid #555;
+      }
+
+      &:active {
+        background: #777;
+        border: 0.1em solid #777;
+      }
+    }
   }
+
+
 
 
 }
