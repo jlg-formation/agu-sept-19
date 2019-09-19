@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faSmileWink } from '@fortawesome/free-regular-svg-icons';
+import { QuizzService } from 'src/app/quizz.service';
 
 @Component({
   selector: 'app-score',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreComponent implements OnInit {
 
-  constructor() { }
+  faSmileWink = faSmileWink;
+  constructor(public quizz: QuizzService) { }
 
   ngOnInit() {
   }
