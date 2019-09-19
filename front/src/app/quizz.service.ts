@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Quizz } from './quizz';
 import { Question } from './question';
+import { Progress } from './progress';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class QuizzService {
 
   current = this.getCurrent();
   map = this.getMap();
+  progress = this.getProgress();
 
   create(name: string) {
     this.current = new Quizz();
@@ -67,6 +69,27 @@ export class QuizzService {
 
   list(): Quizz[] {
     return Object.values(this.map);
+  }
+
+  getProgress(): Progress {
+    const str = localStorage.getItem('progress');
+    if (str === null) {
+      return null;
+    }
+    const progress = JSON.parse(str);
+    return progress;
+  }
+
+  saveProgress() {
+    localStorage.setItem('progress', JSON.stringify(this.progress));
+  }
+
+  initProgress() {
+    this.progress = {
+      questionId: 0,
+      score: 0,
+    };
+    this.saveProgress();
   }
 
 
