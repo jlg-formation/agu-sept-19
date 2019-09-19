@@ -9,6 +9,7 @@ import { LegalComponent } from './routes/legal/legal.component';
 import { HomeComponent } from './routes/home/home.component';
 import { CreateModule } from './create/create.module';
 import { WidgetModule } from './widget/widget.module';
+import { PlayModule } from './play/play.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WidgetModule } from './widget/widget.module';
     AppRoutingModule,
     LayoutModule,
     CreateModule,
-    WidgetModule
+    WidgetModule,
+    PlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]
