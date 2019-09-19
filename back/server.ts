@@ -11,6 +11,12 @@ app.use((req, res, next) => {
     next();
 });
 
+const quizzList = {toto: 'titi'};
+
+app.get('/api/v1/quizz', (req, res) => {
+    res.json(quizzList);
+});
+
 app.use(express.static(htdocs));
 app.use(serveIndex(htdocs, { icons: true }));
 

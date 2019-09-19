@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,8 @@ import { QuizzHttpService } from './quizz-http.service';
     LayoutModule,
     CreateModule,
     WidgetModule,
-    PlayModule
+    PlayModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: QuizzService, useClass: QuizzHttpService }
