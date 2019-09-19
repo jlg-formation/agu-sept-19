@@ -10,6 +10,8 @@ import { HomeComponent } from './routes/home/home.component';
 import { CreateModule } from './create/create.module';
 import { WidgetModule } from './widget/widget.module';
 import { PlayModule } from './play/play.module';
+import { QuizzService } from './quizz.service';
+import { QuizzHttpService } from './quizz-http.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PlayModule } from './play/play.module';
     WidgetModule,
     PlayModule
   ],
-  providers: [],
+  providers: [
+    { provide: QuizzService, useClass: QuizzHttpService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
