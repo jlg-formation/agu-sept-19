@@ -60,5 +60,9 @@ export class QuizzService {
     return Object.keys(this.map).length > 0;
   }
 
+  list(): Quizz[] {
+    return Object.values(this.map);
+  }
+
 
 }

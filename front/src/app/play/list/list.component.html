@@ -1,1 +1,6 @@
-<p>list works!</p>
+<main>
+  <h1>Choisis ton quizz</h1>
+  <div>
+    <button *ngFor="let q of quizz.list()">{{q.name}}</button>
+  </div>
+</main>
