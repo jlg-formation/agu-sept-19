@@ -2,14 +2,14 @@
   <h1>Quizz : <span>{{quizz.current.name}}</span></h1>
   <h2>Question {{quizz.progress.questionId + 1}} / {{quizz.current.questions.length}}</h2>
   <p>{{quizz.current.questions[quizz.progress.questionId].label}}</p>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <div class="answers">
       <label class="answer" *ngFor="let letter of ['A', 'B', 'C', 'D']">
         <input type="radio" formControlName="answer" [value]="letter"><span>{{quizz.current.questions[quizz.progress.questionId]['answer' + letter]}}</span>
       </label>
     </div>
     <div class="buttons">
-      <button class="primary" routerLink="/score" [disabled]="f.invalid">Suivant</button>
+      <button class="primary" [disabled]="f.invalid">Suivant</button>
     </div>
   </form>
 </main>
