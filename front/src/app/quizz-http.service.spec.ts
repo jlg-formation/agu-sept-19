@@ -30,4 +30,12 @@ describe('QuizzHttpService', () => {
     tick();
     expect(service.map).toEqual(dummyMap);
   }));
+
+  it('should test error 500', () => {
+    const service: QuizzHttpService = TestBed.get(QuizzHttpService);
+    const req = httpMock.expectOne(`http://localhost:3000/api/v1/quizz`);
+    expect(req.request.method).toBe('GET');
+    req.flush('', { status: 500, statusText: 'Internal error' });
+    expect(service).toBeTruthy();
+  });
 });
