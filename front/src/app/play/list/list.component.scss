@@ -1,0 +1,16 @@
+@import "src/scss/variables.scss";
+
+h1 {
+  margin-bottom: 1em;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  width: $button-side;
+  height: $button-side;
+  margin: 0.5em;
+}
