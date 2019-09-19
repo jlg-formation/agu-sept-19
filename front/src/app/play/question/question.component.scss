@@ -1,0 +1,22 @@
+
+p {
+  margin: 2em 0;
+}
+
+.answers {
+  display: flex;
+  flex-flow: column;
+
+  .answer {
+    margin: 0.5em 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin: 1em 0;
+}
