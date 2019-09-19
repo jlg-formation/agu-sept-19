@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { QuizzService } from './quizz.service';
+import { Quizz } from './quizz';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,11 @@ export class QuizzHttpService extends QuizzService {
   }
 
   fetchAll() {
-    this.http.get('http://localhost:3000/api/v1/quizz').subscribe({
-      next: x => console.log('x', x),
+    this.http.get<{[key: string]: Quizz}>('http://localhost:3000/api/v1/quizz').subscribe({
+      next: data => {
+        this.map = data;
+        this.saveMap();
+      },
       error: err => console.error('error', err),
       complete: () => console.log('complete')
     });

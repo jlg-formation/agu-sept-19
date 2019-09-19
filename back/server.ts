@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const quizzList = {toto: 'titi'};
+const quizzList = {};
 
 app.get('/api/v1/quizz', (req, res) => {
     res.json(quizzList);
