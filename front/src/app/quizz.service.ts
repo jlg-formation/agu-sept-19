@@ -20,6 +20,11 @@ export class QuizzService {
     localStorage.setItem('current', JSON.stringify(this.current));
   }
 
+  setCurrent(q: Quizz) {
+    this.current = q;
+    this.saveCurrent();
+  }
+
   getCurrent(): Quizz {
     const str = localStorage.getItem('current');
     if (str === null) {
