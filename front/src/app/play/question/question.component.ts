@@ -20,7 +20,16 @@ export class QuestionComponent implements OnInit {
   }
 
   submit() {
-    this.router.navigateByUrl('/score');
+    if (this.f.value.answer === this.quizz.current.questions[this.quizz.progress.questionId].correctAnswer) {
+      this.quizz.progress.score++;
+    }
+    this.quizz.progress.questionId++;
+    this.quizz.saveProgress();
+    if (this.quizz.progress.questionId === this.quizz.current.questions.length) {
+      this.router.navigateByUrl('/score');
+      return;
+    }
+    this.f.reset();
   }
 
 }
