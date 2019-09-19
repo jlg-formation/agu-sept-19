@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as serveIndex from 'serve-index';
 import * as cors from 'cors';
+import * as fs from 'fs';
 
 
 const app = express();
@@ -15,7 +16,12 @@ app.use((req, res, next) => {
     next();
 });
 
-let quizzList = {};
+try {
+    fs.statSync('data.json')
+} catch (e) {
+    fs.writeFileSync('data.json', '{}');
+}
+let quizzList = JSON.parse(fs.readFileSync('data.json', { encoding: 'utf8' }));
 
 app.get('/api/v1/quizz', (req, res) => {
     res.json(quizzList);
@@ -23,6 +29,7 @@ app.get('/api/v1/quizz', (req, res) => {
 
 app.post('/api/v1/quizz', (req, res) => {
     quizzList = req.body;
+    fs.writeFileSync('data.json', JSON.stringify(quizzList));
     res.status(204).end();
 });
 
