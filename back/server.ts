@@ -8,16 +8,22 @@ const port = 3000;
 const htdocs = '../front/dist/front/';
 
 app.use(cors());
+app.use(express.json());
 
 app.use((req, res, next) => {
     console.log('req.url', req.url);
     next();
 });
 
-const quizzList = {};
+let quizzList = {};
 
 app.get('/api/v1/quizz', (req, res) => {
     res.json(quizzList);
+});
+
+app.post('/api/v1/quizz', (req, res) => {
+    quizzList = req.body;
+    res.status(204).end();
 });
 
 app.use(express.static(htdocs));
