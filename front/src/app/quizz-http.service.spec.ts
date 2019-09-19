@@ -1,15 +1,33 @@
-import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed, getTestBed, fakeAsync, tick } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { QuizzHttpService } from './quizz-http.service';
 
 describe('QuizzHttpService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule]
-  }));
+  let injector: TestBed;
+  let httpMock: HttpTestingController;
 
-  it('should be created', () => {
-    const service: QuizzHttpService = TestBed.get(QuizzHttpService);
-    expect(service).toBeTruthy();
+  const dummyMap = {};
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule]
+    });
+    injector = getTestBed();
+    httpMock = injector.get(HttpTestingController);
   });
+
+  afterEach(() => {
+    httpMock.verify();
+  });
+
+  it('should be created', fakeAsync(() => {
+    const service: QuizzHttpService = TestBed.get(QuizzHttpService);
+    const req = httpMock.expectOne(`http://localhost:3000/api/v1/quizz`);
+    expect(req.request.method).toBe('GET');
+    req.flush(dummyMap);
+    expect(service).toBeTruthy();
+    tick();
+    expect(service.map).toEqual(dummyMap);
+  }));
 });
