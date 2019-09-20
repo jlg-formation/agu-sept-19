@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { QuizzService } from 'src/app/quizz.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TimerComponent } from 'src/app/widget/timer/timer.component';
 
 @Component({
   selector: 'app-question',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit {
+
+  @ViewChild(TimerComponent, { static: false }) timerComponent;
 
   mySeconds = 10;
 
@@ -32,10 +35,12 @@ export class QuestionComponent implements OnInit {
       return;
     }
     this.f.reset();
+    this.timerComponent.ngOnInit();
   }
 
-  submitWhenTimeIsOver(object: {message: string}) {
+  submitWhenTimeIsOver(object: { message: string }) {
     console.log('submitWhenTimeIsOver', object.message);
+    this.submit();
   }
 
 }
