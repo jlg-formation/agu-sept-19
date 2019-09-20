@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class QuestionComponent implements OnInit {
 
+  mySeconds = 10;
+
   f = new FormGroup({
     answer: new FormControl('', Validators.required),
   });
