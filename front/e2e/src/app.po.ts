@@ -2,6 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class AppPage {
 
+
   navigateTo() {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
@@ -13,5 +14,10 @@ export class AppPage {
   async clickOnCreateQuizzButton() {
     const button = element(by.css('button'));
     await button.click();
+  }
+
+  async clickOnDoQuizzButton() {
+    const buttons = await element.all(by.css('button'));
+    await buttons[1].click();
   }
 }
