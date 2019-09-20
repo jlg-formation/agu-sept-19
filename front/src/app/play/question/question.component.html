@@ -6,7 +6,10 @@
   <form [formGroup]="f" (ngSubmit)="submit()">
     <div class="answers">
       <label class="answer" *ngFor="let letter of ['A', 'B', 'C', 'D']">
-        <input type="radio" formControlName="answer" [value]="letter"><span>{{quizz.current.questions[quizz.progress.questionId]['answer' + letter]}}</span>
+        <app-radio-button>
+          <input type="radio" formControlName="answer" [value]="letter">
+        </app-radio-button>
+        <span>{{quizz.current.questions[quizz.progress.questionId]['answer' + letter]}}</span>
       </label>
     </div>
     <div class="buttons">

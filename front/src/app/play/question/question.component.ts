@@ -13,7 +13,7 @@ export class QuestionComponent implements OnInit {
 
   @ViewChild(TimerComponent, { static: false }) timerComponent;
 
-  mySeconds = 10;
+  mySeconds = 90;
 
   f = new FormGroup({
     answer: new FormControl('', Validators.required),
