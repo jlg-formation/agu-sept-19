@@ -1,6 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class CreatePage {
+
   async setName(text: string) {
     const input = element(by.css('input'));
     await input.clear();
