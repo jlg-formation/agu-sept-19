@@ -11,7 +11,9 @@
           <span>{{letter}}</span>
           <input type="text" [formControlName]="'answer' + letter" tabindex="{{2 + i}}">
         </label>
-        <input type="radio" formControlName="correctAnswer" [value]="letter" tabindex="{{6 + i}}">
+        <app-radio-button>
+          <input type="radio" formControlName="correctAnswer" [value]="letter" tabindex="{{6 + i}}">
+        </app-radio-button>
       </div>
     </div>
     <div class="buttons">
