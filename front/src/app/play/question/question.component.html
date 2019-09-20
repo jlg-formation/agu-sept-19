@@ -1,5 +1,5 @@
 <main *ngIf="quizz.current && quizz.progress">
-  <div class="timer"><app-timer [seconds]="mySeconds"></app-timer></div>
+  <div class="timer"><app-timer [seconds]="mySeconds" (dringdring)="submitWhenTimeIsOver($event)"></app-timer></div>
   <h1>Quizz : <span>{{quizz.current.name}}</span></h1>
   <h2>Question {{quizz.progress.questionId + 1}} / {{quizz.current.questions.length}}</h2>
   <p>{{quizz.current.questions[quizz.progress.questionId].label}}</p>

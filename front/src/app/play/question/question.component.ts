@@ -34,4 +34,8 @@ export class QuestionComponent implements OnInit {
     this.f.reset();
   }
 
+  submitWhenTimeIsOver(object: {message: string}) {
+    console.log('submitWhenTimeIsOver', object.message);
+  }
+
 }
